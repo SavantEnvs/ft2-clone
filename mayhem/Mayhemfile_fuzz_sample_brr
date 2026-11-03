@@ -1,0 +1,10 @@
+project: savantenvs/ft2-clone
+target: fuzz_sample_brr
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_sample_brr/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_sample_brr
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_sample_brr/fuzz_sample_brr.dict
+    timeout: 30
